@@ -18,7 +18,7 @@ public class Rot13 {
                 }
             }
 
-            if (!trobat) {
+                if (!trobat) {
                 for (int j = 0; j < mayuscules.length; j++) {
                     if (c == mayuscules[j]) {
                         resultat += mayuscules[(j + 13) % mayuscules.length];
@@ -26,11 +26,11 @@ public class Rot13 {
                         break;
                     }
                 }
-            }
+                }
 
-            if (!trobat) {
+                if (!trobat) {
                 resultat += c;
-            }
+                }
         }
 
         return resultat;
