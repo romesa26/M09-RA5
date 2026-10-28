@@ -19,7 +19,7 @@ public class Rot13 {
                 }
             }
 
-                if (!trobat) {
+            if (!trobat) {
                 for (int j = 0; j < mayuscules.length; j++) {
                     if (c == mayuscules[j]) {
                         resultat += mayuscules[(j + 13) % mayuscules.length];
@@ -27,11 +27,11 @@ public class Rot13 {
                         break;
                     }
                 }
-                }
+            }
 
-                if (!trobat) {
+            if (!trobat) {
                 resultat += c;
-                }
+            }
         }
 
         return resultat;
@@ -72,37 +72,25 @@ public class Rot13 {
 
     public static void main(String[] args) {
 
+        String[] paraulesXifrar = {"ABC", "XYZ", "Hola, Mr. Calçot", "Perdó, per tu què és?"};
+        String[] paraulesDesxifrar = {"IÏJ", "FGH", "Òwúi, Ùá. juúkwb", "Zmálx, zmá bc acñ nà"};
+
         System.out.println("Xifrat");
         System.out.println("-----------------");
 
-        String cadenaXifrada = xifraRot13("ABC");
-        System.out.println("ABC" + " -> " + cadenaXifrada);
+        for (int i = 0; i < paraulesXifrar.length; i++) {
+            String cadenaXifrada = xifraRot13(paraulesXifrar[i]);
+            System.out.println(paraulesXifrar[i] + " -> " + cadenaXifrada);
+        }
 
-        cadenaXifrada = xifraRot13("XYZ");
-        System.out.println("XYZ" + " -> " + cadenaXifrada);
-
-        cadenaXifrada = xifraRot13("Hola, Mr. Calçot");
-        System.out.println("Hola, Mr. Calçot" + " -> " + cadenaXifrada);
-
-        cadenaXifrada = xifraRot13("Perdó, per tu què és?");
-        System.out.println("Perdó, per tu què és?" + " -> " + cadenaXifrada);
- 
         System.out.println();
 
         System.out.println("Desxifrat");
         System.out.println("-----------------");
 
-        String cadenaDesxifrada = desxifraRot13("IÏJ");
-        System.out.println("IÏJ" + " -> " + cadenaDesxifrada);
-
-        cadenaDesxifrada = desxifraRot13("FGH");
-        System.out.println("FGH" + " -> " + cadenaDesxifrada);
-
-        cadenaDesxifrada = desxifraRot13("Òwúi, Ùá. juúkwb");
-        System.out.println("Òwúi, Ùá. juúkwb" + " -> " + cadenaDesxifrada);
-
-        cadenaDesxifrada = desxifraRot13("Zmálx, zmá bc acñ nà");
-        System.out.println("Zmálx, zmá bc acñ nà" + " -> " + cadenaDesxifrada);
+        for (int i = 0; i < paraulesDesxifrar.length; i++) {
+            String cadenaDesxifrada = desxifraRot13(paraulesDesxifrar[i]);
+            System.out.println(paraulesDesxifrar[i] + " -> " + cadenaDesxifrada);
+        }
     }
 }
-
